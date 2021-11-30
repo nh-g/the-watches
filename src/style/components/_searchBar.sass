@@ -1,0 +1,51 @@
+.search-bar
+    text-align: center
+        
+    &:active
+        transform: scale(.96)
+
+    input
+        background-color: white
+        $height: 35px
+        display: inline-block
+        width: 0%
+        height: $height
+        border-radius: $height
+        border: 1px solid $color-secondary
+        outline: none
+        background-image: url("../../assets/images/search.svg")
+        background-repeat: no-repeat
+        background-position: center center
+        padding: $space-medium
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px        
+        box-sizing: border-box
+        transition: all .3s ease
+        
+        &:hover
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+            width: 40vw
+            background-position: right 5% top 50%
+
+
+@media (min-width:$media-larger-phablet) 
+    .search-bar input
+        width: 300px
+        background-position: right 5% top 50%
+        &:hover
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+            width: 30vw
+
+
+@media (max-width:$media-small-mobile) 
+    .search-bar 
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 
+        
+        input
+            width: 50%
+            &:hover
+                max-width: 100px
+
+                
+
+        

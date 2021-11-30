@@ -1,0 +1,54 @@
+{
+  "listView": {
+    "heading1": "Hi",
+    "heading2": "We have some parcels for you:",
+    "item": {
+      "parcel_title": "Parcel",
+      "status": {
+        "order-info-received": "Order info received",
+        "on-the-way": "On the way",
+        "delivered": "Delivered",
+        "ready-for-pickup": "Ready for pickup"
+      },
+      "view-detail": "View details"
+    }
+  },
+  "detailView": {
+    "heading1": "Parcel from",
+    "heading2": "You can find parcel information below:",
+    "labels": {
+      "location": "Location",
+      "eta": "Estimated delivery time",
+      "last_update": "Last update",
+      "note": "Note",
+      "verification-title": "Additional verification",
+      "verification-description": "Please show your identity document when pick up"
+    },
+    "descriptions": {
+      "eta": "Sorry we don't have an estimated delivery date yet",
+      "verification": "A verification is required for this package"
+    }
+  },
+  "common": {
+    "loading": "Getting parcels",
+    "no_internet_1": "We could not get your parcels.",
+    "no_internet_2": "Please check your internet connection.",
+    "button-label": "Go back",
+    "date-time": "at",
+    "not-found": "Not Found.",
+    "not-found-description": "⬅ Please go back to the list of all parcels."
+  },
+  "search": {
+    "search-bar": "ID, name or status",
+    "search-result":{
+      "heading": "We found",
+      "succeeded": "parcels that matched your search",
+      "failed": "No results found. Please try another search query."
+    }
+  },
+  "trackMap":{
+    "heading1": "Track all your parcels",
+    "heading2": "You can view each parcel information popup by clicking to the pin.",
+    "arriving": "Arriving"
+  }
+}

@@ -1,0 +1,58 @@
+.card
+    flex-direction: column
+    // text-align: center
+    padding: $space-medium 0 0 0
+    margin-bottom: 0
+    @include content-box
+
+    .image-container
+      background-color: $color-tertiary
+      padding: 16px 4px 16px 4px
+      box-sizing: border-box
+      width: 100%
+
+      img
+        width: 100%
+
+    .title h4
+      font-size: 13px
+      letter-spacing: 2.4px
+      text-transform: uppercase
+      margin: 1.3rem 1.2rem 0px
+      max-width: 100%
+      text-align: start
+      padding: 0px
+      display: flex
+      -webkit-box-pack: start
+      justify-content: flex-start
+      align-items: flex-start
+      line-height: 15.6px
+      font-weight: 300
+
+    span
+      font-size: 16px
+      line-height: 22.4px
+      letter-spacing: 0.15px
+      text-align: start
+      display: flex
+      -webkit-box-pack: start
+      justify-content: flex-start
+      align-items: flex-start
+      margin-right: 0.3rem
+      margin-left: 0px
+      margin: 0.3rem auto 0px 1.2rem
+      font-weight: 500
+
+
+.card:hover
+    cursor: pointer
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2)
+ 
+
+@media screen and ( min-width: $media-larger-phablet )
+  .card
+    flex-direction: column
+    text-align: center
+    padding: $space-medium 0 0 0
+    margin-bottom: 0
+

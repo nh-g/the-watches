@@ -1,0 +1,74 @@
+// @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700;900&display=swap')
+
+// # Colors
+$color-primary: white
+$color-secondary: #FFA2A2
+$color-tertiary: #F3F3F3
+
+// # Text
+$color-text-primary:rgb(0, 8, 28)
+$color-text-secondary: #827A7A 
+$color-text-tertiary: white
+
+// # Fonts
+$font-headings: Tahoma, Geneva, sans-serif
+$font-text: DWFutura,sans-serif
+
+// # Spacing
+$space-big: 24px
+$space-medium: 16px
+$space-small: 8px
+
+// # Media queries  
+$media-small-mobile: 320px
+$media-larger-mobile: 400px
+$media-larger-phablet: 550px
+$media-larger-tablet: 750px
+$media-larger-desktop: 1000px
+
+// # Border radius
+$radius: 8px
+
+// # Mixings
+@mixin content-box
+  margin-bottom: $space-medium
+  // padding: $space-medium
+  background-color: white
+  color: $color-text-primary
+  border-radius: $radius
+
+@mixin page-template
+  width: 60vh
+  margin: 0 auto
+  padding: $space-medium
+  padding-bottom: 150px
+
+  header
+    margin-bottom: $space-medium
+  
+  footer
+    margin-top: $space-medium
+    align-content: center
+    text-align: center
+
+  @media screen and ( min-width: $media-larger-phablet)
+    width: 960px
+  @media screen and ( min-width: 1610px)
+    width: 1140px
+
+
+
+@mixin list
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr))
+    grid-column-gap: $space-big
+    grid-row-gap: $space-big
+
+    @media screen and ( min-width: $media-larger-phablet)
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+
+    @media screen and ( min-width: 1610px)
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr))
+
+
+
