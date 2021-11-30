@@ -14,8 +14,6 @@ export default function ParcelDetail({ data }) {
     const selectedParcel = data.find((item) => item.parcel_id === parcel_id)
 
     const {
-        location_coordinate_latitude: latitude,
-        location_coordinate_longitude: longitude,
         sender,
     } = selectedParcel ?? {};
     

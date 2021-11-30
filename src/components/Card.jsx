@@ -9,7 +9,7 @@ export default function Card({ item }) {
   return (
     <div className="card">
       <div className="image-container">
-        <img src={imageURLs[0].src} />
+        <img src={imageURLs[0].src} alt ="accessory product"/>
       </div>
       <div className="title">
         <h4>{shortenName}</h4>
