@@ -32,6 +32,20 @@ test("Show loading status when fetching API ", async () => {
   expect(screen.getByText(/Fetching.../i)).toBeInTheDocument();
 });
 
+test("show products list after fetching APIs", async () => {
+  render(
+    <StateProvider>
+      <App />
+    </StateProvider>
+  );
+  await waitFor(
+    () =>
+      expect(screen.getByTestId(`test-card-${mockProducts.products[0].sku}`))
+        .toBeInTheDocument
+  );
+  //   expect(screen.getByText(/Fetching.../i)).toBeInTheDocument();
+});
+
 // test("handles server error", async () => {
 //   server.use(
 //     rest.get("/greeting", (req, res, ctx) => {

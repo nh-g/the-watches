@@ -16,7 +16,7 @@ export default function CategoryPage({ data, category }) {
   }, [selectedData]);
 
   const CardArray = list.map((item) => {
-    return <Card key={item.id} item={item} />;
+    return <Card key={item.sku} item={item} />;
   });
 
   return (

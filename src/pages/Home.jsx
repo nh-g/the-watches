@@ -12,13 +12,11 @@ export default function Home({ data }) {
   }, [data]);
 
   const CardArray = list.map((item) => {
-    return <Card key={item.id} item={item} />;
+    return <Card key={item.sku} item={item} />;
   });
 
   return (
     <section id="list-view-page">
-      <header>
-      </header>
       <div className="heading">
         <SortControls list={list} setList={setList} />
       </div>
