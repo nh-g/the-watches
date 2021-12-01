@@ -10,7 +10,7 @@ const writeFile = (product) => {
   });
 };
 
- const fetchData = (async () => {
+ const generateMockData = (async () => {
   const result = await Promise.all([
     axios.get("https://assignment.dwbt.tech/products"),
     axios.get(`https://assignment.dwbt.tech/images`),
