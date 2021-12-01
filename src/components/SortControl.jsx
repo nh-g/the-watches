@@ -1,5 +1,7 @@
 // NPM Packages
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 // Project files
 import {
   sortByNumberDescending,
@@ -8,6 +10,8 @@ import {
 } from "../scripts/sortList";
 
 export default function SortControls({ list, setList }) {
+  const { t } = useTranslation();
+
   // Local state
   const [activeButton, setActiveButton] = useState("");
 
@@ -33,12 +37,12 @@ export default function SortControls({ list, setList }) {
 
   return (
     <section className="sort-controls">
-      <span>Sort by:</span>
+      <span> {t("sorter:sortBy")}:</span>
       <button
         className={`sort-toggler ${activeButton === "name" ? "active" : ""}`}
         onClick={() => sortListByName(list, "name")}
       >
-        Name
+        {t("sorter:name")}
       </button>
       <button
         className={`sort-toggler ${
@@ -46,7 +50,7 @@ export default function SortControls({ list, setList }) {
         }`}
         onClick={() => sortListByPriceAscending(list, "price", "amount")}
       >
-        Lowest
+        {t("sorter:lowest")}
       </button>
       <button
         className={`sort-toggler ${
@@ -54,7 +58,7 @@ export default function SortControls({ list, setList }) {
         }`}
         onClick={() => sortListByPriceDescending(list, "price", "amount")}
       >
-        Highest Price
+        {t("sorter:highest")}
       </button>
     </section>
   );

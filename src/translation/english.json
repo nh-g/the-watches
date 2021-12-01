@@ -3,7 +3,8 @@
     "heading2": "You can find product information below:",
     "labels": {
       "size": "Size",
-      "description": "Description"
+      "description": "Description",
+      "price": "Price"
     }
   },
   "common": {
@@ -21,5 +22,16 @@
       "succeeded": "products that matched your search",
       "failed": "No results found. Please try another search query."
     }
+  },
+  "nav":{
+    "watches": "Watches",
+    "jewelry": "Jewelry",
+    "strap": "Strap"
+  },
+  "sorter":{
+    "sortBy": "Sort By",
+    "name": "Name",
+    "lowest": "Lowest price",
+    "highest": "Highest price"
   }
 }

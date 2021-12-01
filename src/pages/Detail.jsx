@@ -24,7 +24,7 @@ export default function Detail({ data }) {
           <>
             <header>
               <h1>
-                {t("detailView:heading1")} {name}
+                {name}
               </h1>
               <p>{t("detailView:heading2")}</p>
             </header>
