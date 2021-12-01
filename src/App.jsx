@@ -22,9 +22,15 @@ export default function App() {
 
   // Methods
   useEffect(() => {
+    const ac = new AbortController();
+
     fetchProducts()
       .then((response) => onSuccess(response))
       .catch((error) => onFail(error));
+
+    return () => {
+      ac.abort();
+    };
   }, [setData, setStatus]);
 
   function onSuccess(products) {
@@ -39,10 +45,10 @@ export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavigationBar /> 
+        <NavigationBar />
         {status === STATUS_LOADING && <StatusLoading />}
         {status === STATUS_LOADED && <StatusLoaded data={data} />}
-        {status === STATUS_ERROR && <StatusError />} 
+        {status === STATUS_ERROR && <StatusError />}
       </BrowserRouter>
     </div>
   );
