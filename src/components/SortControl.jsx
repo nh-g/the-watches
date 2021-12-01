@@ -1,7 +1,11 @@
 // NPM Packages
 import { useState } from "react";
 // Project files
-import { sortByDate, sortByString } from "../scripts/sortList";
+import {
+  sortByNumberDescending,
+  sortByNumberAscending,
+  sortByString,
+} from "../scripts/sortList";
 
 export default function SortControls({ list, setList }) {
   // Local state
@@ -15,10 +19,15 @@ export default function SortControls({ list, setList }) {
     setList(sortedList);
   }
 
-  function sortListByArrivingDate(list, key) {
-    const sortedList = sortByDate(list, key);
+  function sortListByPriceAscending(list, key1, key2) {
+    const sortedList = sortByNumberAscending(list, key1, key2);
+    setActiveButton("lowest-price");
+    setList(sortedList);
+  }
 
-    setActiveButton(key);
+  function sortListByPriceDescending(list, key1, key2) {
+    const sortedList = sortByNumberDescending(list, key1, key2);
+    setActiveButton("highest-price");
     setList(sortedList);
   }
 
@@ -26,16 +35,26 @@ export default function SortControls({ list, setList }) {
     <section className="sort-controls">
       <span>Sort by:</span>
       <button
-        className={`sort-toggler ${activeButton === "sender" ? "active" : ""}`}
-        onClick={() => sortListByName(list, "sender")}
+        className={`sort-toggler ${activeButton === "name" ? "active" : ""}`}
+        onClick={() => sortListByName(list, "name")}
       >
         Name
       </button>
       <button
-        className={`sort-toggler ${activeButton === "eta" ? "active" : ""}`}
-        onClick={() => sortListByArrivingDate(list, "eta")}
+        className={`sort-toggler ${
+          activeButton === "lowest-price" ? "active" : ""
+        }`}
+        onClick={() => sortListByPriceAscending(list, "price", "amount")}
       >
-        ETA
+        Lowest
+      </button>
+      <button
+        className={`sort-toggler ${
+          activeButton === "highest-price" ? "active" : ""
+        }`}
+        onClick={() => sortListByPriceDescending(list, "price", "amount")}
+      >
+        Highest Price
       </button>
     </section>
   );

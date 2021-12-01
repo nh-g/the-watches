@@ -30,7 +30,7 @@ export default function ParcelDetail({ data }) {
             </header>
 
             <div className="columns">
-              <img src={imageURLs[2].src} alt="accessory product" className = "product-image" />
+              <img src={imageURLs[0].src} alt="accessory product" className = "product-image" />
               <ParcelInformation parcel={selectedItem} />
             </div>
           </>

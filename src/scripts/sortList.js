@@ -9,9 +9,9 @@ export function sortByString(array, key) {
   return sortedList;
 }
 
-export function sortByDate(array, key) {
-  return [...array].sort(
-    (a, b) => Date.parse(a[key]) -Date.parse(b[key])
-  );
+export function sortByNumberDescending(array, key1, key2) {
+  return [...array].sort((a, b) => b[key1][key2] - a[key1][key2]);
 }
-
+export function sortByNumberAscending(array, key1, key2) {
+  return [...array].sort((a, b) => a[key1][key2] - b[key1][key2]);
+}
