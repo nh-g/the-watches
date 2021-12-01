@@ -10,7 +10,7 @@ import SearchBar from './SearchBar';
 const navLinks = [
   {
     title: "Watches",
-    path: "/",
+    path: "/watches",
   },
   {
     title: "Jewelry",

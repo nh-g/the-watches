@@ -9,27 +9,29 @@ import ButtonGoBack from '../components/ButtonGoBack';
 export default function ParcelDetail({ data }) {
     const { t } = useTranslation();
 
-    const { parcel_id} = useParams()
+    const { sku} = useParams()
 
-    const selectedParcel = data.find((item) => item.parcel_id === parcel_id)
+    const selectedItem = data.find((item) => item.sku === sku)
 
     const {
-        sender,
-    } = selectedParcel ?? {};
+        name,
+        imageURLs
+    } = selectedItem ?? {};
     
     return (
       <section id="parcel-detail">
-        {selectedParcel !== null && selectedParcel !== undefined ? (
+        {selectedItem !== null && selectedItem !== undefined ? (
           <>
             <header>
               <h1>
-                {t("detailView:heading1")} {sender}
+                {t("detailView:heading1")} {name}
               </h1>
               <p>{t("detailView:heading2")}</p>
             </header>
 
             <div className="columns">
-              <ParcelInformation parcel={selectedParcel} />
+              <img src={imageURLs[2].src} alt="accessory product" className = "product-image" />
+              <ParcelInformation parcel={selectedItem} />
             </div>
           </>
         ) : (

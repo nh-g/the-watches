@@ -4,9 +4,11 @@
     .columns
         margin-bottom: $space-medium
     
-    .map
+    .product-image
         z-index: 500 // to force the redraw of border-radius
         border-radius: $radius $radius 0 0
+        img
+            object-fit: contain
 
 
     .content-box
@@ -23,11 +25,8 @@
         
     .data-field
         hr
-            margin: $space-big 0
-            height: 5px
-            background-image: url("../../assets/images/hr.svg")
-            background-repeat: repeat-x
-            border: none
+            margin: $space-small 0
+            border: solid 1px $color-tertiary
         
 @media screen and ( min-width: $media-tablet )
     #parcel-detail
@@ -41,7 +40,7 @@
                 margin-right: $space-big
                 margin-bottom: 0
 
-            .map
+            .product-image
                 order: 2
                 width: 100% // to force the map to play along flexbox
                 height: 400px // to force the map to play along flexbox
