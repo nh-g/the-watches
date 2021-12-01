@@ -16,7 +16,7 @@ export default function Detail({ data }) {
   const { name, imageURLs } = selectedItem ?? {};
 
   return (
-    <section id="parcel-detail">
+    <section id="product-detail">
       {selectedItem !== null && selectedItem !== undefined ? (
         <>
           <header>
