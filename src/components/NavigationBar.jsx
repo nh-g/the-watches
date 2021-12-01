@@ -17,7 +17,7 @@ const navLinks = [
     path: "/jewelry",
   },
   {
-    title: "Watch Strap",
+    title: "Strap",
     path: "/watch-straps",
   },
   // {

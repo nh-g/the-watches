@@ -22,7 +22,7 @@ export default function SearchBar() {
       <form onSubmit={search} className="search-bar">
         <input
           type="text"
-          id="sender-search"
+          id="search"
           placeholder={t("search:search-bar")}
           value={query}
           onChange={(event) => setQuery(event.target.value.replace(/\s/g, ""))}
