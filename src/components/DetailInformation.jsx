@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 // Project files
 import DataField from './DataField';
 
-export default function ParcelInformation({parcel}) {
+export default function DetailedInformation({parcel}) {
     const { t } = useTranslation();
 
     const {
