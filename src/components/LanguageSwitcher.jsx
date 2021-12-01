@@ -2,8 +2,6 @@
 import { useState } from "react";
 
 //Project files
-import flag_en from "../assets/images/flag_en.svg";
-import flag_se from "../assets/images/flag_se.svg";
 import i18n from "../i18n";
 
 export default function LanguageSwitcher() {
@@ -29,8 +27,6 @@ export default function LanguageSwitcher() {
   return (
     <button className="language-switcher" onClick={toggleLanguage}>
       <p className="description-small">{language}</p>
-      {language === "en" && <img src={flag_en} alt="British flag" />}
-      {language === "se" && <img src={flag_se} alt="Swedish flag" />}
     </button>
   );
 }

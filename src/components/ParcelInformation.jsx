@@ -10,23 +10,24 @@ export default function ParcelInformation({parcel}) {
     const {
         size,
         description,
-        price, color
+        price
     } = parcel ?? {};
 
     return (
       <div className="content-box">
-        <DataField label={t("detailView:labels:location")} text={size} />
+        <DataField label={t("detailView:labels:size")} text={size} />
         {description && (
-          <DataField label={t("detailView:labels:note")} text={description} />
+          <DataField
+            label={t("detailView:labels:description")}
+            text={description}
+          />
         )}
 
         <DataField
           label={t("detailView:labels:location")}
           text={`${price.symbol}${price.amount}`}
         />
-        <button className="cta">
-          Add to Cart
-        </button>
+        <button className="cta">Add to Cart</button>
       </div>
     );
 }

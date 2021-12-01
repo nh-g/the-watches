@@ -1,54 +1,25 @@
 {
-  "listView": {
-    "heading1": "Hej",
-    "heading2": "Vi har några paket till dig:",
-    "item": {
-      "parcel_title": "Paket",
-      "status": {
-        "order-info-received": "Beställnings info fått",
-        "on-the-way": "På väg",
-        "delivered": "Levereras",
-        "ready-for-pickup": "Redo för upphämtning"
-      },
-      "view-detail": "Visa mer"
-    }
-  },
   "detailView": {
-    "heading1": "Beställ från",
     "heading2": "Detta är den tillgängliga informationen:",
     "labels": {
-      "location": "Hämtningsplats",
-      "eta": "Beräknad leveranstid",
-      "last_update": "Senaste uppdateringen",
-      "note": "Notera",
-      "verification-title": "Ytterligare verifiering",
-      "verification-description": "Vänligen visa ditt identitetsdokument när du hämtar"
-    },
-    "descriptions": {
-      "eta": "Tyvärr har vi inte ett beräknad leveransdatum än",
-      "verification": "En verifiering krävs för detta paket"
+      "size": "storlek",
+      "description": "Beskrivning"
     }
   },
   "common": {
-    "loading": "Få paket",
-    "no_internet_1": "Vi kunde inte få dina paket.",
+    "loading": "Få produkt",
+    "no_internet_1": "Vi kunde inte få dina produkt.",
     "no_internet_2": "Kontrollera din internetanslutning.",
     "button-label": "Gå tillbaka",
-    "date-time": "kl",
     "not-found": "Hittades inte.",
-    "not-found-description": "⬅ Gå tillbaka till listan över alla paket."
+    "not-found-description": "⬅ Gå tillbaka till listan över alla produkt."
   },
   "search": {
-    "search-bar": "ID, namn eller status",
+    "search-bar": "namn, färg eller storlek",
     "search-result": {
       "heading": "Vi hittade",
-      "succeeded": "paket som matchade din sökning",
+      "succeeded": "produkt som matchade din sökning",
       "failed": "Inga resultat funna. Prova en annan sökord."
     }
-  },
-  "trackMap": {
-    "heading1": "Spåra alla dina paket",
-    "heading2": "Du kan visa varje paketinformation popup genom att klicka på knappen.",
-    "arriving": "Kommer"
   }
 }
