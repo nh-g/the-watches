@@ -1,6 +1,9 @@
 #parcel-detail
     @include page-template
 
+    header
+        border-bottom: solid 1px $color-text-primary
+
     .columns
         margin-bottom: $space-medium
     
@@ -9,24 +12,18 @@
         border-radius: $radius $radius 0 0
         width: 100%
 
-
     .content-box
         @include content-box
         border-top-left-radius: 0
         border-top-right-radius: 0
 
-    .data-field:last-child
-        hr
-            display: none
     
     .footer
         text-align: center
         
     .data-field
-        hr
-            margin: $space-small 30px 10px 30px
-            border: solid 1px $color-tertiary
-        
+        border-bottom: 0.1rem solid rgb(221, 221, 221)
+
 @media screen and ( min-width: $media-tablet )
     #parcel-detail
         .columns
@@ -56,5 +53,4 @@
 
 @media screen and ( min-width: $media-phablet )
   .data-field
-    hr
       margin: $space-medium 0

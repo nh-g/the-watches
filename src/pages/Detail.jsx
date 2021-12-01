@@ -21,7 +21,6 @@ export default function Detail({ data }) {
         <>
           <header>
             <h1>{name}</h1>
-            <hr />
           </header>
 
           <div className="columns">
