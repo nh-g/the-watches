@@ -12,19 +12,13 @@ export default function SearchResult({ data }) {
 
   const { query } = useParams();
 
-  // const filterByName = filterList(data, "name", query);
+  const filterByName = filterList(data, "name", "", query);
+  const filterBySize = filterList(data, "size", "", query);
+  const filterByColor = filterList(data, "color", "id", query);
+  const searchResults = [...filterBySize, ...filterByName, ...filterByColor];
 
-  const filterSize = filterList(data, "size", query);
-
-  // const filterByStatus = data.filter((item) =>
-  //   item.status.toUpperCase().replace(/-/g, "").includes(query.toUpperCase().replace(/\s/g, ""))
-  // );
-
-  // const searchResults = [...filterBySender, ...filterById, ...filterByStatus];
-  const searchResults = [...filterSize];
-
-  const Parcels = searchResults.map((item, index) => (
-    <Card key={index} parcel={item} />
+  const Products = searchResults.map((item, index) => (
+    <Card key={index} item={item} />
   ));
 
   return (
@@ -38,7 +32,7 @@ export default function SearchResult({ data }) {
 
       <div className="list">
         {searchResults.length > 0 ? (
-          Parcels
+          Products
         ) : (
           <p>{t("search:search-result:failed")}</p>
         )}
