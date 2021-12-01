@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import ParcelInformation from '../components/ParcelInformation';
 import ButtonGoBack from '../components/ButtonGoBack';
 
-export default function ParcelDetail({ data }) {
+export default function Detail({ data }) {
     const { t } = useTranslation();
 
     const { sku} = useParams()

@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 
 // Project files
 import Home from '../pages/Home';
-import ParcelDetail from '../pages/ParcelDetail';
+import DetailPage from '../pages/Detail';
 import SearchResult from "../pages/SearchResult";
-
+import CategoryPage from '../pages/CategoryPage';
 export default function StatusLoaded({data}) {
     return (
       <Switch>
@@ -14,11 +14,23 @@ export default function StatusLoaded({data}) {
         </Route>
 
         <Route path="/products/:sku">
-          <ParcelDetail data={data} />
+          <DetailPage data={data} />
         </Route>
 
         <Route path="/results/:query">
           <SearchResult data={data} />
+        </Route>
+
+        <Route path="/watches">
+          <CategoryPage data={data} category="watch" />
+        </Route>
+
+        <Route path="/watch-straps">
+          <CategoryPage data={data} category="strap" />
+        </Route>
+
+        <Route path="/jewelry">
+          <CategoryPage data={data} category="bracelet" />
         </Route>
       </Switch>
     );

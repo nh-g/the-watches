@@ -5,22 +5,20 @@ import { useState, useEffect } from "react";
 // Project files
 import Card from "../components/Card";
 import SortControls from "../components/SortControl";
-import SearchBar from "../components/SearchBar";
-export default function Home({ data }) {
+
+export default function CategoryPage({ data, category }) {
   const [list, setList] = useState(data);
+  const selectedData = data.filter((item) =>
+    item.type.toLowerCase().includes(category)
+  );
 
   useEffect(() => {
-    setList(data);
-  }, [data]);
-
-  const { t } = useTranslation();
+    setList(selectedData);
+  }, [selectedData]);
 
   const CardArray = list.map((item) => {
     return <Card key={item.id} item={item} />;
   });
-
-  // const typeArray = list.map((item) => item.type);
-  // console.log("typeArray", typeArray);
 
   return (
     <section id="home">

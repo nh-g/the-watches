@@ -20,10 +20,10 @@ const navLinks = [
     title: "Watch Strap",
     path: "/watch-straps",
   },
-  {
-    title: "Gift Cards",
-    path: "/",
-  },
+  // {
+  //   title: "Gift Cards",
+  //   path: "/",
+  // },
 ];
 
 export default function NavigationBar() {
