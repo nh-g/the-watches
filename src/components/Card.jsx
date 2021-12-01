@@ -5,7 +5,7 @@ export default function Card({ item }) {
   const { sku, name, price, color, imageURLs } = item;
 
   const itemColor = color.id;
-  const shortenName = name.replace(itemColor, "").replace(/[0-9]/g, "");
+  const shortenName = name.replace(itemColor, "").replace(/[0-9]/g, "").replace(/mm/g, "");
   return (
     <Link className="card" to={`/products/${sku}`}>
       <div className="image-container">
