@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 // Project files
 import Home from '../pages/Home';
 import ParcelDetail from '../pages/ParcelDetail';
+import SearchResult from "../pages/SearchResult";
+
 export default function StatusLoaded({data}) {
     return (
       <Switch>
@@ -15,6 +17,9 @@ export default function StatusLoaded({data}) {
           <ParcelDetail data={data} />
         </Route>
 
-     </Switch>
+        <Route path="/results/:query">
+          <SearchResult data={data} />
+        </Route>
+      </Switch>
     );
 }

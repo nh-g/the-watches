@@ -22,8 +22,8 @@ $space-small: 8px
 // # Media queries  
 $media-small-mobile: 320px
 $media-larger-mobile: 400px
-$media-larger-phablet: 550px
-$media-larger-tablet: 750px
+$media-phablet: 550px
+$media-tablet: 750px
 $media-larger-desktop: 1000px
 
 // # Border radius
@@ -51,7 +51,7 @@ $radius: 8px
     align-content: center
     text-align: center
 
-  @media screen and ( min-width: $media-larger-phablet)
+  @media screen and ( min-width: $media-phablet)
     width: 960px
   @media screen and ( min-width: 1610px)
     width: 1140px
@@ -64,7 +64,7 @@ $radius: 8px
     grid-column-gap: $space-big
     grid-row-gap: $space-big
 
-    @media screen and ( min-width: $media-larger-phablet)
+    @media screen and ( min-width: $media-phablet)
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
 
     @media screen and ( min-width: 1610px)

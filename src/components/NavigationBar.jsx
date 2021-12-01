@@ -4,9 +4,8 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 //Project files
 import BrandLogo from '../assets/images/logo.jpg'
-// import SearchBar from './SearchBar';
 import LanguageSwitcher from "./LanguageSwitcher";
-
+import SearchBar from './SearchBar';
 
 const navLinks = [
   {
@@ -14,7 +13,7 @@ const navLinks = [
     path: "/",
   },
   {
-    title: "JEWELERY",
+    title: "Jewelry",
     path: "/jewelry",
   },
   {
@@ -22,12 +21,13 @@ const navLinks = [
     path: "/watch-straps",
   },
   {
-    title: "Contact",
-    path: "/contact",
+    title: "Gift Cards",
+    path: "/",
   },
 ];
 
 export default function NavigationBar() {
+
   return (
     <nav id="navigation-bar">
       <Link to="/">
@@ -35,14 +35,24 @@ export default function NavigationBar() {
       </Link>
       <div className="flexbox-expand-space" />
 
-      {/* <SearchBar /> */}
+      <div className="nav-list">
+        <ul>
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <Link to={link.path}>{link.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div className="flexbox-expand-space" />
 
       <div className="right-items">
+        <SearchBar />
+        <div className="flexbox-expand-space" />
         <LanguageSwitcher />
         <Link to="/checkout">
-          <ShoppingCartIcon style={{ fill: "white" }} />
+          <ShoppingCartIcon style={{ fill: "white", marginTop: "10px" }} />
         </Link>
       </div>
     </nav>

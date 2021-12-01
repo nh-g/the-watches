@@ -12,15 +12,16 @@ export default function SearchResult({ data }) {
 
   const { query } = useParams();
 
-  const filterBySender = filterList(data, "sender", query);
+  // const filterByName = filterList(data, "name", query);
 
-  const filterById = filterList(data, "parcel_id", query);
+  const filterSize = filterList(data, "size", query);
 
-  const filterByStatus = data.filter((item) =>
-    item.status.toUpperCase().replace(/-/g, "").includes(query.toUpperCase().replace(/\s/g, ""))
-  );
+  // const filterByStatus = data.filter((item) =>
+  //   item.status.toUpperCase().replace(/-/g, "").includes(query.toUpperCase().replace(/\s/g, ""))
+  // );
 
-  const searchResults = [...filterBySender, ...filterById, ...filterByStatus];
+  // const searchResults = [...filterBySender, ...filterById, ...filterByStatus];
+  const searchResults = [...filterSize];
 
   const Parcels = searchResults.map((item, index) => (
     <Card key={index} parcel={item} />

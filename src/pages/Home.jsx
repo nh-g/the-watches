@@ -26,7 +26,7 @@ export default function Home({ data }) {
       </header>
       <div className="heading">
         <SortControls list={list} setList={setList} />
-        <SearchBar />
+        {/* <SearchBar /> */}
       </div>
       <div className="list">{CardArray}</div>
     </section>
