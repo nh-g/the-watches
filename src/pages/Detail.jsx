@@ -21,7 +21,7 @@ export default function Detail({ data }) {
         <>
           <header>
             <h1>{name}</h1>
-            <p>{t("detailView:heading2")}</p>
+            <hr />
           </header>
 
           <div className="columns">
@@ -30,7 +30,7 @@ export default function Detail({ data }) {
               alt="accessory product"
               className="product-image"
             />
-            <DetailedInformation parcel={selectedItem} />
+            <DetailedInformation item={selectedItem} />
           </div>
         </>
       ) : (

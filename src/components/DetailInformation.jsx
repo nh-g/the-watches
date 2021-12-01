@@ -3,15 +3,16 @@ import { useTranslation } from "react-i18next";
 
 // Project files
 import DataField from './DataField';
+import AddToCart from "./AddToCart";
 
-export default function DetailedInformation({parcel}) {
+export default function DetailedInformation({item}) {
     const { t } = useTranslation();
 
     const {
         size,
         description,
         price
-    } = parcel ?? {};
+    } = item ?? {};
 
     return (
       <div className="content-box">
@@ -27,7 +28,7 @@ export default function DetailedInformation({parcel}) {
           label={t("detailView:labels:price")}
           text={`${price.symbol}${price.amount}`}
         />
-        <button className="cta">Add to Cart</button>
+        <AddToCart item={item} />
       </div>
     );
 }

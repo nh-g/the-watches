@@ -7,9 +7,13 @@ import { useTranslation } from "react-i18next";
 import BrandLogo from "../assets/images/logo.jpg";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SearchBar from "./SearchBar";
+import { useStateValue } from "../state/StateProvider";
 
 export default function NavigationBar() {
   const { t } = useTranslation();
+
+  const [{ cart }] = useStateValue();
+
 
   return (
     <nav id="navigation-bar">
@@ -37,7 +41,10 @@ export default function NavigationBar() {
         <div className="flexbox-expand-space" />
         <LanguageSwitcher />
         <Link to="/checkout">
-          <ShoppingCartIcon style={{ fill: "white", marginTop: "10px" }} />
+          <span style={{ display: "flex", color: "gray"}}>
+            <ShoppingCartIcon style={{ fill: "white" }} />
+            {cart?.length}
+          </span>
         </Link>
       </div>
     </nav>

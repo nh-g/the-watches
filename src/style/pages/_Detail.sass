@@ -7,8 +7,7 @@
     .product-image
         z-index: 500 // to force the redraw of border-radius
         border-radius: $radius $radius 0 0
-        img
-            object-fit: contain
+        width: 100%
 
 
     .content-box
@@ -25,7 +24,7 @@
         
     .data-field
         hr
-            margin: $space-small 0
+            margin: $space-small 30px 10px 30px
             border: solid 1px $color-tertiary
         
 @media screen and ( min-width: $media-tablet )
@@ -46,11 +45,13 @@
                 // width: 100% // to force to play along flexbox
                 height: 400px // to force to play along flexbox
                 border-radius: $radius
+                width: auto
+                img
+                    object-fit: contain
 
             
             .footer
                 text-align: right
-
 
 
 @media screen and ( min-width: $media-phablet )
