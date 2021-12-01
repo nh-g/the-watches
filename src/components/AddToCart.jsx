@@ -3,7 +3,7 @@ import { useStateValue } from "../state/StateProvider";
 
 export default function AddToCart({item}) {
   // Properties
-  const { id, title, imageURL, price, rating } = item;
+  const { id, title, imageURL, price } = item;
   // Global State
   const [{ cart }, dispatch] = useStateValue();
 
@@ -17,7 +17,6 @@ export default function AddToCart({item}) {
         title: title,
         imageURL: imageURL,
         price: price,
-        rating: rating,
       },
     });
   };

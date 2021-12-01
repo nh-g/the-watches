@@ -40,12 +40,10 @@ export default function NavigationBar() {
         <SearchBar />
         <div className="flexbox-expand-space" />
         <LanguageSwitcher />
-        <Link to="/checkout">
           <span style={{ display: "flex", color: "gray"}}>
             <ShoppingCartIcon style={{ fill: "white" }} />
             {cart?.length}
           </span>
-        </Link>
       </div>
     </nav>
   );
