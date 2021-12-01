@@ -1,19 +1,19 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { render, waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import mockProducts from "./data/mockProducts.json";
 import mockImages from "./data/mockImages.json";
-
+import { PRODUCTS_API_URL, IMAGES_API_URL } from "./scripts/fetchProducts.js";
 // Project files
 import App from "./App";
 import { StateProvider } from "./state/StateProvider";
 
 const handlers = [
-  rest.get("https://assignment.dwbt.tech/products", (req, res, ctx) => {
+  rest.get(PRODUCTS_API_URL, (req, res, ctx) => {
     return res(ctx.json(mockProducts));
   }),
-  rest.get("https://assignment.dwbt.tech/images", (req, res, ctx) => {
+  rest.get(IMAGES_API_URL, (req, res, ctx) => {
     return res(ctx.json(mockImages));
   }),
 ];
@@ -32,7 +32,7 @@ test("Show loading status when fetching API ", async () => {
   expect(screen.getByText(/Fetching.../i)).toBeInTheDocument();
 });
 
-test("show products list after fetching APIs", async () => {
+test("Show products list after fetched APIs", async () => {
   render(
     <StateProvider>
       <App />
@@ -43,22 +43,23 @@ test("show products list after fetching APIs", async () => {
       expect(screen.getByTestId(`test-card-${mockProducts.products[0].sku}`))
         .toBeInTheDocument
   );
-  //   expect(screen.getByText(/Fetching.../i)).toBeInTheDocument();
 });
 
-// test("handles server error", async () => {
-//   server.use(
-//     rest.get("/greeting", (req, res, ctx) => {
-//       return res(ctx.status(500));
-//     })
-//   );
+test("Show error messages when APIs return error", async () => {
+  server.use(
+    rest.get(PRODUCTS_API_URL, (req, res, ctx) => {
+      return res(ctx.status(500));
+    })
+  );
 
-//   render(<Fetch url="/greeting" />);
+  render(
+    <StateProvider>
+      <App />
+    </StateProvider>
+  );
 
-//   fireEvent.click(screen.getByText("Load Greeting"));
-
-//   await waitFor(() => screen.getByRole("alert"));
-
-//   expect(screen.getByRole("alert")).toHaveTextContent("Oops, failed to fetch!");
-//   expect(screen.getByRole("button")).not.toBeDisabled();
-// });
+  await waitFor(
+    () =>
+      expect(screen.getByText("We could not fetch products")).toBeInTheDocument
+  );
+});

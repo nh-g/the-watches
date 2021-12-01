@@ -1,6 +1,6 @@
 // Constants
-const PRODUCTS_API_URL = "https://assignment.dwbt.tech/products";
-const IMAGES_API_URL = "https://assignment.dwbt.tech/images";
+export const PRODUCTS_API_URL = "https://assignment.dwbt.tech/products";
+export const IMAGES_API_URL = "https://assignment.dwbt.tech/images";
 const DEBUG_MODE = false;
 
 export const fetchProducts = async () => {
