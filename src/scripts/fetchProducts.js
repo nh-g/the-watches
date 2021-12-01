@@ -5,7 +5,7 @@ const DEBUG_MODE = false;
 
 export const fetchProducts = async () => {
   if (DEBUG_MODE) {
-    return require("../data/products.json");
+    return require("../data/mockedProducts.json");
   }
 
   return Promise.all([
