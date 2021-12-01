@@ -1,11 +1,13 @@
+// NPM packages
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { render, waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+
+// Project files
 import mockProducts from "./data/mockProducts.json";
 import mockImages from "./data/mockImages.json";
 import { PRODUCTS_API_URL, IMAGES_API_URL } from "./scripts/fetchProducts.js";
-// Project files
 import App from "./App";
 import { StateProvider } from "./state/StateProvider";
 
@@ -29,7 +31,9 @@ test("Show loading status when fetching API ", async () => {
       <App />
     </StateProvider>
   );
-  expect(screen.getByText(/Fetching.../i)).toBeInTheDocument();
+  await waitFor(() =>
+    expect(screen.getByText(/Fetching.../i)).toBeInTheDocument()
+  );
 });
 
 test("Show products list after fetched APIs", async () => {
