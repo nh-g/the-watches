@@ -23,13 +23,18 @@ export default function App() {
   // Methods
   useEffect(() => {
     const ac = new AbortController();
-
+    let isMounted = true;
     fetchProducts()
-      .then((response) => onSuccess(response))
+      .then((response) => {
+        if (isMounted) {
+          onSuccess(response);
+        }
+      })
       .catch((error) => onFail(error));
 
     return () => {
       ac.abort();
+      isMounted = false;
     };
   }, [setData, setStatus]);
 
