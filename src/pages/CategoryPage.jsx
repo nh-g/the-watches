@@ -21,9 +21,6 @@ export default function CategoryPage({ data, category }) {
 
   return (
     <section id="list-view-page">
-      <header>
-        <h1> {data.length} products</h1>
-      </header>
       <div className="heading">
         <SortControls list={list} setList={setList} />
       </div>
